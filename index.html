@@ -353,10 +353,11 @@
         weekSelect.appendChild(opt);
       });
 
-      // 최신 주차 (배열 첫 번째) 자동 선택
-      weekSelect.value = 0;
-      loadWeekData(0);
-
+      // 기본값: 전체 주차에서 이름 검색
+      weekSelect.value = 'all';
+      searchStatus.innerHTML = '<div class="status" style="color:#999;font-size:12px;">📅 전체 주차에서 이름 또는 배번호로 검색하세요</div>';
+      searchInput.disabled = false;
+      searchBtn.disabled = false;
     } catch (err) {
       weekSelect.innerHTML = '<option value="">로드 실패</option>';
       searchStatus.innerHTML = '<div class="status error">주차 목록 로드 실패: ' + err.message + '</div>';
