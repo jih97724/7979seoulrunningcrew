@@ -1,5 +1,14 @@
 [
    {
+    "label": "14회차(7/16 목) 반포",
+    "api": "https://api.raceresult.com/411079/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "14회차(7/16 목) 여의도",
+    "api": "https://api.raceresult.com/411080/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+  },
+   {
     "label": "13회차(7/9 목) 양재(취소)",
     "api": "https://api.raceresult.com/409716/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
   },
