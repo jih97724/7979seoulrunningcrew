@@ -1,5 +1,14 @@
 [
    {
+    "label": "17회차(8/6 목) 양재",
+    "api": "https://api.raceresult.com/414534/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "17회차(8/6 목) 여의도",
+    "api": "https://api.raceresult.com/414535/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+  },
+   {
     "label": "16회차(7/30 목) 반포",
     "api": "https://api.raceresult.com/413444/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
   },
