@@ -1,4 +1,13 @@
 [
+  {
+    "label": "21회차(9/3 목) 양재",
+    "api": "https://api.raceresult.com/419850/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "21회차(9/3 목) 여의도",
+    "api": "https://api.raceresult.com/419847/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+   },
    {
     "label": "20회차(8/27 목) 반포",
     "api": "https://api.raceresult.com/418598/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
