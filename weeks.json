@@ -1,5 +1,14 @@
 [
   {
+    "label": "23회차(9/17 목) 양재",
+    "api": "https://api.raceresult.com/423602/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "23회차(9/17 목) 여의도",
+    "api": "https://api.raceresult.com/423603/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+   },
+  {
     "label": "22회차(9/10 목) 반포",
     "api": "https://api.raceresult.com/422147/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
   },
