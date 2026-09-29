@@ -1,5 +1,14 @@
 [
   {
+    "label": "24회차(10/01 목) 반포",
+    "api": "https://api.raceresult.com/426727/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "24회차(10/01 목) 여의도",
+    "api": "https://api.raceresult.com/426728/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+   },
+  {
     "label": "23회차(9/17 목) 양재",
     "api": "https://api.raceresult.com/423602/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
   },
