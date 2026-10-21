@@ -1,5 +1,14 @@
 [
    {
+    "label": "28회차(10/22 목) 반포",
+    "api": "https://api.raceresult.com/431231/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
+  },
+  {
+    "label": "28회차(10/22 목) 여의도",
+    "api": "https://api.raceresult.com/431232/QV86QV3JYKQHU3U0XKVD4A8JEK86UOM4",
+    "logo": "event-logo-blue.png"
+   },
+   {
     "label": "27회차(10/15 목) 반포",
     "api": "https://api.raceresult.com/429745/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
   },
