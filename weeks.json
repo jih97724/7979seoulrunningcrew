@@ -2,13 +2,15 @@
    {
     "label": "7979 명랑운동회 21km 팀릴레이",
     "api": "https://api.raceresult.com/436551/EZ1WF240Z282UCG6GO4N5GO6OQJEH3C2",
-    "logo": "key-visual.jpg"
+    "logo": "key-visual.jpg",
+    "hideRaLogo": true
   },
   {
     "label": "7979 명랑운동회 개인 10km",
     "api": "https://api.raceresult.com/436550/YZW8OAWAPIV6MOID4A7TI8KTDDLFZXD5",
-    "logo": "key-visual.jpg"
-   },
+    "logo": "key-visual.jpg",
+    "hideRaLogo": true
+  },
    {
     "label": "28회차(10/22 목) 반포",
     "api": "https://api.raceresult.com/431231/814P06LH9Z03ZXZ9FXS4EDYJL98ZX5NO"
