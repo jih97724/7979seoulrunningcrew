@@ -36,6 +36,9 @@
   }
   .logo-ra { text-align: center; margin-bottom: 30px; }
   .event-logo { text-align: center; margin-bottom: 36px; }
+  .event-logo img { max-width: 280px; height: auto; }
+  /* 키비주얼 모드 (명랑운동회 등): ra 로고 숨기고 사진을 가로 꽉 차게 */
+  .event-logo img.keyvisual { width: 100%; max-width: 100%; border-radius: 12px; display: block; }
   .section-header {
     background: var(--primary);
     color: white;
@@ -244,7 +247,7 @@
     <img src="logo.png" alt="ra" style="max-width: 140px; height: auto;">
   </div>
   <div class="event-logo">
-    <img src="event-logo.png" alt="7979 서울 러닝크루" style="max-width: 280px; height: auto;">
+    <img src="event-logo.png" alt="7979 서울 러닝크루">
   </div>
 
   <!-- 검색 화면 -->
@@ -334,6 +337,18 @@
   // 다양한 이름 필드명 처리 헬퍼
   const getName = (p) => p.FirstLastname || p.Firstname || p.Name || p['이름'] || '';
 
+  // 주차별 로고/키비주얼 적용
+  // weeks.json 항목에 "hideRaLogo": true 가 있으면 ra 로고를 숨기고 logo 이미지를 가로 꽉 차게 표시
+  // week 를 넘기지 않으면 기본 상태(ra 로고 + 7979 로고)로 되돌림
+  function applyBranding(week) {
+    const raLogo = document.querySelector('.logo-ra');
+    const eventLogoImg = document.querySelector('.event-logo img');
+    const keyVisual = !!(week && week.hideRaLogo);
+    raLogo.style.display = keyVisual ? 'none' : '';
+    eventLogoImg.src = (week && week.logo) || 'event-logo.png';
+    eventLogoImg.classList.toggle('keyvisual', keyVisual);
+  }
+
   async function loadWeeks() {
     try {
       const res = await fetch('weeks.json?t=' + Date.now());
@@ -371,8 +386,7 @@
     currentWeek = week;
 
     // 주차별 로고 변경
-    const eventLogoImg = document.querySelector('.event-logo img');
-    eventLogoImg.src = week.logo || 'event-logo.png';
+    applyBranding(week);
 
     participants = [];
     searchInput.disabled = true;
@@ -465,8 +479,7 @@
     if (allMatches.length === 1) {
       // 한 명만 매칭 → 바로 상세
       currentWeek = allMatches[0].week;
-      const eventLogoImg = document.querySelector('.event-logo img');
-      eventLogoImg.src = allMatches[0].week.logo || 'event-logo.png';
+      applyBranding(allMatches[0].week);
       searchStatus.innerHTML = '';
       showDetail(allMatches[0].participant);
       return;
@@ -497,8 +510,7 @@
         '<div class="event-item-info"><span>배번호 ' + bib + '</span><span>' + chipTime + '</span></div>';
       item.addEventListener('click', () => {
         currentWeek = m.week;
-        const eventLogoImg = document.querySelector('.event-logo img');
-        eventLogoImg.src = m.week.logo || 'event-logo.png';
+        applyBranding(m.week);
         eventListView.classList.remove('active');
         showDetail(m.participant);
       });
@@ -574,12 +586,17 @@
     searchView.style.display = 'block';
     searchInput.value = '';
     searchInput.focus();
+
+    // 검색 화면으로 돌아오면: 특정 주차를 골라둔 상태면 그 주차 로고, 전체 검색이면 기본 로고
+    const sel = weekSelect.value;
+    applyBranding(sel !== 'all' && sel !== '' ? weeks[parseInt(sel, 10)] : null);
   }
 
   weekSelect.addEventListener('change', (e) => {
     const val = e.target.value;
     if (val === 'all') {
-      // 전체 주차 모드 - 검색 입력만 활성화
+      // 전체 주차 모드 - 검색 입력만 활성화, 로고 기본값으로
+      applyBranding(null);
       searchStatus.innerHTML = '<div class="status" style="color:#999;font-size:12px;">📅 전체 주차에서 이름 또는 배번호로 검색하세요</div>';
       searchInput.disabled = false;
       searchBtn.disabled = false;
